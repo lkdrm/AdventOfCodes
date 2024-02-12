@@ -29,6 +29,12 @@ List<string> CamelCardsValues =
 List<string> myCards = [];
 Dictionary<string, int> allCamelCards = [];
 Dictionary<string, int> sortedCards = [];
+Dictionary<string, int> fourSameCards = [];
+Dictionary<string, int> fullHouseCards = [];
+Dictionary<string, int> threeSameCards = [];
+Dictionary<string, int> twoPairsCards = [];
+Dictionary<string, int> topCard = [];
+Dictionary<string, int> finishedSortedCards = [];
 int cardRank = 1;
 
 foreach (var readLine in puzzleText)
@@ -67,6 +73,24 @@ foreach (var pairCard in allCamelCards.Keys)
     }
 
     sortedCards.Add(pairCard, sameCard);
+}
+
+foreach (var pairCard in sortedCards)
+{
+    switch (pairCard.Value)
+    {
+        case 4:
+            finishedSortedCards.Add(pairCard.Key, cardRank);
+            break;
+        case 3:
+            break;
+        case 2: 
+            break;
+        case 1: 
+            break;
+        case 0: 
+            break;
+    }
 }
 
 Console.WriteLine();
